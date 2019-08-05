@@ -7,14 +7,22 @@
                 <img src="/storage/{{ $post->image }}" class="w-100"/>
             </div>
             <div class="col-4">
-                <h3>
-                    {{ $post->user->username }}
-                </h3>
+                <div>
+                <div class="d-flex align-items-center">
+                    <div class="pr-3">
+                        <img src="/storage/{{ $post->user->profile->image }}" class="w-100 rounded-circle" style="max-width: 40px"/>
+                    </div>
+                    <div>
+                        <div class="font-weight-bold"><a href="/profile/{{ $post->user->id }}"><span class="text-dark">{{ $post->user->username }}</span></a></div>
+                    </div>
+                </div>
+                    <hr>
 
-                <p>
-                    {{ $post->caption }}
-                </p>
-
+                    <p>
+                        <a href="/profile/{{ $post->user->id }}"><span class="text-dark font-weight-bold">{{ $post->user->username }}</span></a>
+                        {{ $post->caption }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
